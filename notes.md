@@ -14,10 +14,8 @@ Rendering code directly into an iframe can pose security risks, especially if th
 
 - Style the editor
 
+  - Change it so that it can be have tabs (_should be through the html and css files_)
+
 - Turn it into a re-usable function in order to place multiple ones in a blog post or something of the sort
 
-- Change it so that it can be have tabs (_should be through the html and css files_)
-
-- Add save functionality
-
-- Look up how to use the sandbax attribute on the iframe for security reasons
+- Look up how to use the sandbox attribute on the iframe for security reasons

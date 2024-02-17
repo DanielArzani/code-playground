@@ -54,6 +54,19 @@ window.addEventListener('DOMContentLoaded', () => {
     };
   }
 
+  // save content
+  function saveContentToLocal() {
+    const userHtml = htmlEditor.state.doc.toString();
+    const userCss = cssEditor.state.doc.toString();
+    const userJs = jsEditor.state.doc.toString();
+
+    localStorage.setItem('userHtml', userHtml);
+    localStorage.setItem('userCss', userCss);
+    localStorage.setItem('userJs', userJs);
+
+    alert('Content saved locally!');
+  }
+
   const commonExtensions = [
     lineNumbers(),
     highlightActiveLineGutter(),
@@ -93,34 +106,42 @@ window.addEventListener('DOMContentLoaded', () => {
   const iframeDoc =
     previewIframe.contentDocument || previewIframe.contentWindow.document;
 
-  // HTML Editor
+  // Fetch saved content
+  const savedHtml =
+    localStorage.getItem('userHtml') ||
+    `<!-- HTML content here -->
+    ${'\n'.repeat(10)}`;
+  const savedCss =
+    localStorage.getItem('userCss') ||
+    `<!-- css content here -->
+    ${'\n'.repeat(10)}`;
+  const savedJs =
+    localStorage.getItem('userJs') ||
+    `<!-- js content here -->
+    ${'\n'.repeat(10)}`;
+
+  // HTML Editor Initialization with savedHtml
   let htmlEditor = new EditorView({
     state: EditorState.create({
-      doc: `<-- html content here -->
-        ${'\n'.repeat(9)}
-      `,
+      doc: savedHtml,
       extensions: [...commonExtensions, html()],
     }),
     parent: document.querySelector('#js--html-editor'),
   });
 
-  // CSS Editor
+  // CSS Editor Initialization with savedCss
   let cssEditor = new EditorView({
     state: EditorState.create({
-      doc: `<-- css content here -->
-        ${'\n'.repeat(9)}
-      `,
+      doc: savedCss,
       extensions: [...commonExtensions, css()],
     }),
     parent: document.querySelector('#js--css-editor'),
   });
 
-  // Javascript editor
+  // JavaScript Editor Initialization with savedJs
   let jsEditor = new EditorView({
     state: EditorState.create({
-      doc: `<-- javascript content here -->
-        ${'\n'.repeat(9)}
-      `,
+      doc: savedJs,
       extensions: [...commonExtensions, javascript()],
     }),
     parent: document.querySelector('#js--editor'),
@@ -156,12 +177,15 @@ window.addEventListener('DOMContentLoaded', () => {
     iframeDoc.close();
   };
 
+  // Now, call updateIframe directly to update the iframe content with the saved content
+  updateIframe();
+
   // Example: Update the iframe when the DOM is loaded
   // You might want to trigger this under different circumstances, e.g., a button click
-  const button = createElement('button', 'Click', 'btn');
+  const button = createElement('button', 'Save', 'btn');
   if (button instanceof HTMLButtonElement) {
     button.addEventListener('click', () => {
-      updateIframe();
+      saveContentToLocal();
     });
 
     appendElement(button);
