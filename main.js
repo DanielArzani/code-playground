@@ -182,7 +182,7 @@ window.addEventListener('DOMContentLoaded', () => {
 
   // Example: Update the iframe when the DOM is loaded
   // You might want to trigger this under different circumstances, e.g., a button click
-  const button = createElement('button', 'Save', 'btn');
+  const button = selectElement('.btn', 'button');
   if (button instanceof HTMLButtonElement) {
     button.addEventListener('click', () => {
       saveContentToLocal();

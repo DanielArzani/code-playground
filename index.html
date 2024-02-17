@@ -7,13 +7,79 @@
     <title>Vite App</title>
   </head>
   <body>
-    <div class="editor-container">
-      <div id="js--editor" class="editor"></div>
-      <div id="js--html-editor" class="editor"></div>
-      <div id="js--css-editor" class="editor"></div>
-    </div>
-    <iframe id="js--preview" class="preview" title="preview pane"></iframe>
+    <main class="main">
+      <div class="editor-container">
+        <!-- Tab List -->
+        <div role="tablist" aria-label="Code Editor Tabs" class="tablist">
+          <!-- Tabs -->
+          <button
+            id="html-tab"
+            role="tab"
+            aria-selected="true"
+            aria-controls="js--html-editor"
+            tabindex="0"
+            class="tab tab--html"
+          >
+            HTML
+          </button>
+          <button
+            id="css-tab"
+            role="tab"
+            aria-selected="false"
+            aria-controls="js--css-editor"
+            tabindex="-1"
+            class="tab tab--css"
+          >
+            CSS
+          </button>
+          <button
+            id="js-tab"
+            role="tab"
+            aria-selected="false"
+            aria-controls="js--editor"
+            tabindex="-1"
+            class="tab tab--js"
+          >
+            JS
+          </button>
+        </div>
+
+        <!-- Tab Panels -->
+        <div
+          id="js--html-editor"
+          role="tabpanel"
+          aria-labelledby="html-tab"
+          class="editor"
+          hidden
+        ></div>
+        <div
+          id="js--css-editor"
+          role="tabpanel"
+          aria-labelledby="css-tab"
+          class="editor"
+          hidden
+        ></div>
+        <div
+          id="js--editor"
+          role="tabpanel"
+          aria-labelledby="js-tab"
+          class="editor"
+        ></div>
+      </div>
+
+      <!-- preview -->
+      <iframe
+        id="js--preview"
+        class="preview"
+        title="preview pane"
+        role="contentinfo"
+      ></iframe>
+
+      <!-- save button -->
+      <button class="btn">Save</button>
+    </main>
 
     <script type="module" src="/main.js"></script>
+    <script type="module" src="/tabs.js"></script>
   </body>
 </html>
