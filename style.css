@@ -82,9 +82,21 @@ select {
 }
 
 /*---------------------
+       GENERAL
+ ---------------------*/
+body {
+  display: grid;
+  place-content: center;
+}
+
+/*---------------------
         MAIN
  ---------------------*/
-.main {
+/* layout */
+.wrapper {
+  display: flex;
+
+  height: 100%;
 }
 
 /*---------------------
@@ -92,10 +104,6 @@ select {
  ---------------------*/
 .editor-container {
 }
-
-/*---------------------
-       CONTAINER
- ---------------------*/
 
 /*---------------------
        TAB LIST
@@ -124,6 +132,15 @@ select {
 .editor {
 }
 
+.editor--html {
+}
+
+.editor--css {
+}
+
+.editor--js {
+}
+
 /*---------------------
        PREVIEW
  ---------------------*/
@@ -135,7 +152,13 @@ select {
  ---------------------*/
 .btn {
   background-color: lavender;
+  border: none;
+  border-radius: 8px;
   cursor: pointer;
   padding: 2rem;
-  width: 100%;
+  transition: background-color 0.3s ease-in-out;
+}
+
+.btn:hover {
+  background-color: hotpink;
 }

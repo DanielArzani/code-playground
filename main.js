@@ -187,8 +187,6 @@ window.addEventListener('DOMContentLoaded', () => {
     button.addEventListener('click', () => {
       saveContentToLocal();
     });
-
-    appendElement(button);
   }
 
   const debouncedUpdateIframe = debounce(updateIframe, 500); // Adjust the delay as needed

@@ -7,7 +7,7 @@
     <title>Vite App</title>
   </head>
   <body>
-    <main class="main">
+    <div class="wrapper">
       <div class="editor-container">
         <!-- Tab List -->
         <div role="tablist" aria-label="Code Editor Tabs" class="tablist">
@@ -49,21 +49,21 @@
           id="js--html-editor"
           role="tabpanel"
           aria-labelledby="html-tab"
-          class="editor"
-          hidden
+          class="editor editor--html"
         ></div>
         <div
           id="js--css-editor"
           role="tabpanel"
           aria-labelledby="css-tab"
-          class="editor"
+          class="editor editor--css"
           hidden
         ></div>
         <div
           id="js--editor"
           role="tabpanel"
           aria-labelledby="js-tab"
-          class="editor"
+          class="editor editor--js"
+          hidden
         ></div>
       </div>
 
@@ -77,7 +77,7 @@
 
       <!-- save button -->
       <button class="btn">Save</button>
-    </main>
+    </div>
 
     <script type="module" src="/main.js"></script>
     <script type="module" src="/tabs.js"></script>
