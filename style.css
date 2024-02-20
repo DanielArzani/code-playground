@@ -94,27 +94,62 @@ body {
  ---------------------*/
 /* layout */
 .wrapper {
-  display: flex;
+  display: grid;
+  grid-template-rows: 1fr 1fr;
+  grid-template-columns: 1fr;
+}
 
-  height: 100%;
+.wrapper {
+  background-color: black;
+  border-radius: 8px;
+  padding: 1rem;
+}
+
+@media (min-width: 768px) {
+  .wrapper {
+    grid-template-rows: 1fr;
+    grid-template-columns: 1fr 1fr;
+  }
+
+  .editor-container {
+    grid-row: 1/2;
+    grid-column: 1/2;
+  }
+
+  .preview {
+    grid-row: 1/2;
+    grid-column: 2/3;
+  }
 }
 
 /*---------------------
     EDITOR CONTAINER
  ---------------------*/
 .editor-container {
+  background-color: white;
+  height: 100%;
+  width: 100%;
 }
 
 /*---------------------
        TAB LIST
  ---------------------*/
 .tab-list {
+  border-bottom: 1px solid black;
 }
 
 /*---------------------
          TABS
  ---------------------*/
 .tab {
+  border: none;
+  background-color: transparent;
+  cursor: pointer;
+  transition: all 0.3s ease-in-out;
+}
+
+.tab:hover {
+  color: darkgoldenrod;
 }
 
 .tab--html {
@@ -145,6 +180,12 @@ body {
        PREVIEW
  ---------------------*/
 .preview {
+}
+
+.preview--iframe {
+  background-color: white;
+  height: 100%;
+  width: 100%;
 }
 
 /*---------------------

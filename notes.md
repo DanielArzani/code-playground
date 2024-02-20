@@ -19,3 +19,7 @@ Rendering code directly into an iframe can pose security risks, especially if th
 - Turn it into a re-usable function in order to place multiple ones in a blog post or something of the sort
 
 - Look up how to use the sandbox attribute on the iframe for security reasons
+
+## To Fix
+
+- Each editor should be using the same number of lines, meaning, deleting one line in HTML should delete it in both css and js

@@ -68,15 +68,27 @@
       </div>
 
       <!-- preview -->
-      <iframe
-        id="js--preview"
-        class="preview"
-        title="preview pane"
-        role="contentinfo"
-      ></iframe>
+      <div class="preview">
+        <iframe
+          class="preview--iframe"
+          id="js--preview"
+          title="preview pane"
+          role="contentinfo"
+        ></iframe>
+      </div>
 
       <!-- save button -->
-      <button class="btn">Save</button>
+      <button
+        style="
+          position: absolute;
+          bottom: 0px;
+          transform: translateX(25%);
+          width: 400px;
+        "
+        class="btn"
+      >
+        Save
+      </button>
     </div>
 
     <script type="module" src="/main.js"></script>
