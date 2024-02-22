@@ -18,6 +18,10 @@ Rendering code directly into an iframe can pose security risks, especially if th
 
 - Break up the fancy css into chunks since its too large and takes a while to save
 
+- Remove the background (_behind the editor_) which may have been made with CSS
+
+- Add types to code once combined and working
+
 - Look up how to use the sandbox attribute on the iframe for security reasons
 
 ## To Fix
