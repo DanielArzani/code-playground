@@ -12,11 +12,13 @@ Rendering code directly into an iframe can pose security risks, especially if th
 
 ## Where I left off
 
-- Style the editor
+- Turn main.js into re-usable functions
 
-  - Change it so that it can be have tabs (_should be through the html and css files_)
+- Have code from fancy-editor be connected to an iframe
 
-- Turn it into a re-usable function in order to place multiple ones in a blog post or something of the sort
+- Add Html, css and js tabs (_perhaps where the top left buttons are_)
+
+- Break up the fancy css into chunks since its too large and takes a while to save
 
 - Look up how to use the sandbox attribute on the iframe for security reasons
 
