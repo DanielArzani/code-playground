@@ -12,8 +12,6 @@ Rendering code directly into an iframe can pose security risks, especially if th
 
 ## Where I left off
 
-- Turn main.js into re-usable functions
-
 - Have code from fancy-editor be connected to an iframe
 
 - Add Html, css and js tabs (_perhaps where the top left buttons are_)
