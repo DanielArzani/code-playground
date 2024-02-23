@@ -1,5 +1,5 @@
 /*****************************
-  DOTS (soon to change to tabs)
+            DOTS
  *****************************/
 
 .dots {
@@ -30,4 +30,18 @@
   opacity: 0.75;
   cursor: pointer;
   border: none;
+}
+
+/*---------------------
+         TABS
+ ---------------------*/
+.tab {
+  border: none;
+  background-color: transparent;
+  cursor: pointer;
+  transition: all 0.3s ease-in-out;
+}
+
+.tab:hover {
+  color: darkgoldenrod;
 }

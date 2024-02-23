@@ -2,13 +2,39 @@
 <html lang="en">
   <head>
     <meta charset="UTF-8" />
-    <link rel="icon" type="image/svg+xml" href="/vite.svg" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Vite App</title>
+    <title>Code Playground</title>
+    <link
+      rel="stylesheet"
+      href="https://unpkg.com/augmented-ui@2.0.0/augmented-ui.min.css"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.35.0/codemirror.css"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.58.1/addon/scroll/simplescrollbars.min.css"
+    />
+    <link rel="stylesheet" href="/css/global.css" />
+    <link rel="stylesheet" href="/css/outer-container.css" />
+    <link rel="stylesheet" href="/css/container-decorations.css" />
+    <link rel="stylesheet" href="/css/tabs-dots.css" />
+    <link rel="stylesheet" href="/css/code-container.css" />
+    <link rel="stylesheet" href="/css/cm-colours.css" />
+    <link rel="stylesheet" href="/css/theme-overrides.css" />
+    <link rel="stylesheet" href="/css/preview.css" />
   </head>
   <body>
-    <div class="wrapper">
-      <div class="editor-container">
+    <div class="code-container">
+      <input class="sig" value="Daniel" readonly aria-label="Name" />
+      <div class="glow-container">
+        <div class="augs" data-augmented-ui></div>
+      </div>
+      <section class="augs bg" data-augmented-ui>
+        <!-- <button
+          class="dots"
+          title="(click to change) Current Mode: HTML"
+        ></button> -->
         <!-- Tab List -->
         <div role="tablist" aria-label="Code Editor Tabs" class="tablist">
           <!-- Tabs -->
@@ -16,7 +42,7 @@
             id="html-tab"
             role="tab"
             aria-selected="true"
-            aria-controls="js--html-editor"
+            aria-controls="html-code"
             tabindex="0"
             class="tab tab--html"
           >
@@ -26,7 +52,7 @@
             id="css-tab"
             role="tab"
             aria-selected="false"
-            aria-controls="js--css-editor"
+            aria-controls="css-code"
             tabindex="-1"
             class="tab tab--css"
           >
@@ -36,64 +62,64 @@
             id="js-tab"
             role="tab"
             aria-selected="false"
-            aria-controls="js--editor"
+            aria-controls="js-code"
             tabindex="-1"
             class="tab tab--js"
           >
             JS
           </button>
         </div>
-
-        <!-- Tab Panels -->
-        <div
-          id="js--html-editor"
-          role="tabpanel"
-          aria-labelledby="html-tab"
-          class="editor editor--html"
-        ></div>
-        <div
-          id="js--css-editor"
-          role="tabpanel"
-          aria-labelledby="css-tab"
-          class="editor editor--css"
-          hidden
-        ></div>
-        <div
-          id="js--editor"
-          role="tabpanel"
-          aria-labelledby="js-tab"
-          class="editor editor--js"
-          hidden
-        ></div>
-      </div>
-
-      <!-- preview -->
-      <div class="preview">
-        <iframe
-          class="preview--iframe"
-          id="js--preview"
-          title="preview pane"
-          role="contentinfo"
-        ></iframe>
-      </div>
-
-      <!-- save button -->
-      <button
-        style="
-          position: absolute;
-          bottom: 0px;
-          transform: translateX(25%);
-          width: 400px;
-        "
-        class="btn"
-      >
-        Save
-      </button>
+        <input
+          class="title"
+          value="Code Playground"
+          readonly
+          area-label="Code playground"
+        />
+        <div class="code highcontrast-dark">
+          <!-- <textarea id="html-code"></textarea>
+          <textarea id="css-code"></textarea>
+          <textarea id="js-code"></textarea> -->
+          <!-- Tab Panels -->
+          <textarea
+            id="html-code"
+            role="tabpanel"
+            aria-labelledby="html-tab"
+            class="editor editor--html"
+          ></textarea>
+          <textarea
+            id="css-code"
+            role="tabpanel"
+            aria-labelledby="css-tab"
+            class="editor editor--css"
+            hidden
+          ></textarea>
+          <textarea
+            id="js-code"
+            role="tabpanel"
+            aria-labelledby="js-tab"
+            class="editor editor--js"
+            hidden
+          ></textarea>
+        </div>
+      </section>
     </div>
+    <div class="preview">
+      <iframe
+        class="preview--iframe"
+        id="js--preview"
+        title="preview pane"
+        role="contentinfo"
+      ></iframe>
+    </div>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.58.1/codemirror.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.58.1/mode/javascript/javascript.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.58.1/mode/css/css.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.58.1/addon/scroll/simplescrollbars.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.58.1/mode/markdown/markdown.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.58.1/mode/htmlmixed/htmlmixed.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.58.1/mode/xml/xml.js"></script>
 
-    <a href="/fancy-editor.html">Go To Fancy Editor</a>
-
-    <script type="module" src="/main.js"></script>
-    <script type="module" src="/tabs.js"></script>
+    <script src="/js/main.js" type="module"></script>
+    <script src="/js/tabs.js" type="module"></script>
   </body>
 </html>
