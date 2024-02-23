@@ -16,6 +16,12 @@ Rendering code directly into an iframe can pose security risks, especially if th
 
   - Don't forget to remove the CDNs
 
+  - Don't forget to adds save functionality
+
+  - Fix the tabs styles
+
+  - Add a new theme for the text since the old one is gone and delete the un-needed css
+
 - Add types to code once combined and working
 
 - Add the convenient plugins

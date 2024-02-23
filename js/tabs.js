@@ -1,4 +1,3 @@
-//! A temp file until I fix that mess in main.js
 const tabs = document.querySelectorAll('.tab');
 
 tabs.forEach((tab) => {
