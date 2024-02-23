@@ -1,0 +1,95 @@
+/*****************************
+        OUTER CONTAINER 
+ *****************************/
+
+.code-container {
+  resize: both;
+  overflow: hidden;
+  margin: auto;
+  width: 80vw;
+  height: 80vh;
+  min-width: 420px;
+  min-height: 255px;
+  position: relative;
+  --glow-margin: 70px;
+  filter: drop-shadow(0 0 75px rgb(128 0 255 / 0.25));
+}
+
+.code-container::after {
+  content: '';
+  background: linear-gradient(
+    to right,
+    transparent,
+    black 25px,
+    black 110px,
+    transparent 110px 175px,
+    black 175px,
+    black calc(100% - 25px),
+    transparent
+  );
+  position: absolute;
+  top: 125px;
+  left: var(--glow-margin);
+  right: var(--glow-margin);
+  height: 4px;
+  display: block;
+  z-index: 90;
+  opacity: 0.5;
+}
+
+.glow-container {
+  position: absolute;
+  inset: 0;
+  display: grid;
+  z-index: 2;
+  pointer-events: none;
+  --glow: drop-shadow(0 0 1px violet);
+  filter: var(--glow) brightness(1.5) drop-shadow(0 0 10px violet);
+}
+
+.augs {
+  --aug-rect-l1: initial;
+  --aug-l1-width: 110px;
+  --aug-l1-height: 4px;
+  --aug-l-center: 57px;
+
+  --aug-rect-r1: initial;
+  --aug-r1-width: (100% - 125px - 50px);
+  --aug-r1-height: 4px;
+  --aug-r-center: 57px;
+
+  --aug-clip-tr1: initial;
+  --aug-tr1-alt-join-out: initial;
+  --aug-tr1: 17px;
+  --aug-clip-tr2: initial;
+  --aug-tr2: 17px;
+  --aug-tr-extend1: 50px;
+
+  --aug-round-tl1: initial;
+  --aug-tl1: 8px;
+  --aug-round-br1: initial;
+  --aug-br1: 8px;
+  margin: auto;
+  width: calc(100% - var(--glow-margin) * 2);
+  height: calc(100% - var(--glow-margin) * 2);
+}
+
+.glow-container .augs {
+  --aug-border: initial;
+  --aug-border-all: 2px;
+  --aug-border-bg: linear-gradient(to bottom left, rebeccapurple, orange);
+}
+
+section.augs {
+  position: absolute;
+  inset: 0;
+  margin: auto;
+  --aug-inlay: initial;
+  --aug-inlay-all: 2px;
+  --aug-inlay-bg: url(http://augmented-ui.com/img/propjockey.png) center 70% /
+    auto 70% no-repeat;
+  --aug-inlay-opacity: 0.25;
+}
+section.augs::before {
+  filter: brightness(0.2) blur(10px);
+}

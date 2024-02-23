@@ -1,0 +1,10 @@
+/*****************************
+            GLOBAL
+ *****************************/
+:root {
+  --editor-top-bar-background: black;
+  --tab-bg: #131417;
+  --tab-border-color: #2a2c33;
+  --resizer-background: var(--editor-top-bar-background);
+  --resizer-border: #242424;
+}

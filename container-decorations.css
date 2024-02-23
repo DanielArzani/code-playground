@@ -1,0 +1,32 @@
+/*****************************
+     CONTAINER DECORATIONS
+ *****************************/
+
+input.sig {
+  content: 'attr(content)';
+  position: absolute;
+  bottom: 90px;
+  right: 90px;
+  z-index: 999;
+  color: rgb(255 200 255 / 0.5);
+  text-shadow: 0 0 12px rebeccapurple;
+  letter-spacing: 0.1em;
+  width: calc(100% - 240px);
+  background: transparent;
+  border: none;
+  text-align: right;
+  letter-spacing: 0.1em;
+}
+
+input.title {
+  position: absolute;
+  top: 17px;
+  left: 120px;
+  width: calc(100% - 240px);
+  background: transparent;
+  color: rgb(255 200 255 / 0.5);
+  text-shadow: 0 0 12px rebeccapurple;
+  border: none;
+  text-align: center;
+  letter-spacing: 0.1em;
+}

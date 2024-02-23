@@ -12,7 +12,7 @@ Rendering code directly into an iframe can pose security risks, especially if th
 
 ## Where I left off
 
-- Have code from fancy-editor be connected to an iframe
+- Fix the css in combined-refactored.css
 
 - Add Html, css and js tabs (_perhaps where the top left buttons are_)
 
@@ -21,6 +21,8 @@ Rendering code directly into an iframe can pose security risks, especially if th
 - Remove the background (_behind the editor_) which may have been made with CSS
 
 - Add types to code once combined and working
+
+- Add the convenient plugins
 
 - Look up how to use the sandbox attribute on the iframe for security reasons
 

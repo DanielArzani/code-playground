@@ -1,0 +1,193 @@
+/******************************
+       THEME OVERRIDES
+ *****************************/
+/* theme overrides original source */
+/* https://marketplace.visualstudio.com/items?itemName=webrender.synthwave-x-fluoromachine */
+/* I just ported it to codemirror */
+
+.highcontrast-dark .cm-header {
+  font-weight: bold;
+}
+
+.highcontrast-dark .cm-strong {
+  font-weight: bold;
+}
+
+.highcontrast-dark .cm-em {
+  font-style: italic;
+}
+
+.highcontrast-dark .CodeMirror-cursor {
+  border-left-color: white !important;
+}
+
+.highcontrast-dark .CodeMirror-selected {
+  background: rgba(255, 255, 255, 0.05);
+}
+
+.highcontrast-dark .CodeMirror-focused .CodeMirror-selected {
+  background: rgba(255, 255, 255, 0.1);
+}
+
+.highcontrast-dark .CodeMirror-matchingbracket {
+  border-bottom: 1px solid rgba(255, 255, 255, 0.5);
+}
+
+.highcontrast-dark .CodeMirror-matchingtag {
+  border-bottom: 1px solid rgba(255, 255, 255, 0.3);
+}
+
+.highcontrast-dark .powers {
+  border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+}
+
+.highcontrast-dark .cm-searching {
+  background: black;
+  outline: 2px solid rgba(255, 255, 255, 0.25);
+}
+
+.highcontrast-dark .CodeMirror-hints,
+.highcontrast-dark .emmet-abbreviation-preview {
+  border: 1px solid #5a5f73;
+  background: #1e1f26;
+}
+
+.highcontrast-dark .CodeMirror-hint {
+  color: white;
+}
+
+.highcontrast-dark li.CodeMirror-hint-active {
+  background: #c7c9d3;
+  color: black;
+}
+
+.highcontrast-dark .project-editor-warning {
+  background: rgba(255, 255, 255, 0.1);
+}
+
+.highcontrast-dark .cm-atom {
+  color: #9963ff;
+}
+
+.highcontrast-dark .box-html .cm-atom {
+  color: #ff3c41;
+}
+
+.highcontrast-dark .cm-def,
+.highcontrast-dark .cm-variable-2,
+.highcontrast-dark .cm-variable,
+.highcontrast-dark .box-js .cm-variable + .cm-property {
+  color: #61e2ff;
+  text-shadow: 0 0 2px #001716, 0 0 5px #03edf933, 0 0 10px #ffff6633;
+}
+
+.highcontrast-dark .cm-header {
+  color: #ff3c41;
+}
+.highcontrast-dark .cm-builtin {
+  color: #ae63e4;
+}
+
+.highcontrast-dark .cm-number {
+  color: #9963ff;
+}
+
+.highcontrast-dark .cm-operator,
+.highcontrast-dark .cm-variable-3,
+.highcontrast-dark .cm-attribute,
+.highcontrast-dark .cm-property,
+.highcontrast-dark .cm-keyword,
+.highcontrast-dark .presentation > .cm-def,
+.highcontrast-dark .cm-qualifier {
+  color: #fc199a;
+  text-shadow: 0 0 2px #393a33, 0 0 35px #ffffff44, 0 0 10px #fc199a,
+    0 0 2px #fc199a;
+}
+.highcontrast-dark .cm-operator,
+.highcontrast-dark .cm-variable-3,
+.highcontrast-dark .cm-attribute,
+.highcontrast-dark .cm-property {
+  font-style: italic;
+}
+
+.highcontrast-dark .cm-meta,
+.highcontrast-dark .cm-meta + .cm-property,
+.highcontrast-dark .cm-string,
+.highcontrast-dark .cm-string-2 {
+  color: #9963ff;
+  text-shadow: none;
+}
+
+.highcontrast-dark .cm-tag,
+.highcontrast-dark .cm-callee,
+.highcontrast-dark .box-css .cm-tag,
+.highcontrast-dark .cm-tag.cm-bracket,
+.highcontrast-dark .box-js .cm-property {
+  color: #ffcc00;
+  text-shadow: 0 0 2px #100c0f, 0 0 3px #ffaa0099, 0 0 5px #ffaa0099,
+    0 0 10px #ffaa0099;
+  font-style: italic;
+}
+
+.highcontrast-dark .cm-comment {
+  font-style: italic;
+  color: #9963ff99;
+  text-shadow: 0 0 2px #001716, 0 0 5px #03edf933, 0 0 10px #ffff6633;
+}
+
+body.editor.highcontrast-dark {
+  background: #241b2f;
+}
+
+.highcontrast-dark .box.box.box,
+.editor.highcontrast-dark .top-boxes,
+.highcontrast-dark .CodeMirror-gutter-wrapper,
+body.project.highcontrast-dark .editor-pane,
+body.project.highcontrast-dark .editor {
+  background: none;
+}
+.editor.highcontrast-dark .top-boxes {
+  --swxfm__c: rgba(153, 99, 255);
+  background: repeating-linear-gradient(
+      to top,
+      rgba(255, 255, 255, 0.03) 0px 2px,
+      transparent 2px 4px
+    ),
+    linear-gradient(to bottom, #200933 75%, #3d0b43);
+}
+.editor.highcontrast-dark .top-boxes:after {
+  content: '';
+  height: 300px;
+  width: 100%;
+  display: block;
+  background-image: linear-gradient(
+      90deg,
+      rgba(252, 25, 154, 0.1) 1px,
+      rgba(0, 0, 0, 0) 1px
+    ),
+    linear-gradient(0deg, rgba(252, 25, 154, 0.1) 1px, rgba(0, 0, 0, 0) 1px);
+  background-position: bottom;
+  background-repeat: repeat;
+  background-size: 20px 20px;
+  left: -25px;
+  position: absolute;
+  pointer-events: none;
+  bottom: 0;
+  transform: perspective(100px) rotateX(60deg);
+  z-index: 0;
+}
+
+.highcontrast-dark .box.box.box pre,
+.editor.highcontrast-dark .top-boxes pre,
+.highcontrast-dark .CodeMirror-gutter-wrapper pre,
+body.project.highcontrast-dark .editor-pane pre,
+body.project.highcontrast-dark .editor pre {
+  color: #b5b4b6;
+}
+
+.highcontrast-dark .CodeMirror-guttermarker-subtle,
+.highcontrast-dark .CodeMirror-linenumber {
+  color: #8a2dc066;
+  text-shadow: 0 0 2px #393a33, 0 0 35px #ffffff44, 0 0 10px #8a2dc066,
+    0 0 2px #8a2dc066;
+}

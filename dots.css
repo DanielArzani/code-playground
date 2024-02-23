@@ -1,0 +1,33 @@
+/*****************************
+  DOTS (soon to change to tabs)
+ *****************************/
+
+.dots {
+  position: absolute;
+  top: 2px;
+  left: 2px;
+  width: 110px;
+  height: 50px;
+  --red: #fc199a;
+  --yellow: #ffcc00;
+  --green: #61e2ff;
+  --close: radial-gradient(circle, var(--red), var(--red) 7px, transparent 8px);
+  --min: radial-gradient(
+    circle,
+    var(--yellow),
+    var(--yellow) 7px,
+    transparent 8px
+  );
+  --max: radial-gradient(
+    circle,
+    var(--green),
+    var(--green) 7px,
+    transparent 8px
+  );
+  background: var(--close) -28px no-repeat, var(--min) -2px no-repeat,
+    var(--max) 24px no-repeat;
+  filter: brightness(0.5);
+  opacity: 0.75;
+  cursor: pointer;
+  border: none;
+}

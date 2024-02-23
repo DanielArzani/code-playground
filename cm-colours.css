@@ -1,0 +1,83 @@
+/******************************
+   CODE MIRROR COLOURS OVERIDES
+ *****************************/
+
+/* codepen's highcontrast-dark theme */
+.cm-header {
+  font-weight: 700;
+}
+.cm-strong {
+  font-weight: 700;
+}
+.cm-em {
+  font-style: italic;
+}
+
+.cm-searching {
+  background: #000;
+  outline: 2px solid rgba(255, 255, 255, 0.25);
+}
+
+.cm-keyword {
+  color: #ffdd40;
+}
+.cm-atom {
+  color: #a3d65a;
+}
+.box-html .cm-atom {
+  color: #ff3c41;
+}
+.cm-def {
+  color: #0ebeff;
+}
+.cm-variable {
+  color: #c7c9d3;
+}
+.cm-variable-2 {
+  color: #47cf73;
+}
+.cm-variable-3 {
+  color: #fff;
+}
+.cm-header {
+  color: #ff3c41;
+}
+.cm-number {
+  color: #2bc7b9;
+}
+.cm-property {
+  color: #5e91f2;
+}
+.cm-attribute {
+  color: #e3e4e8;
+}
+.cm-builtin {
+  color: #ae63e4;
+}
+.cm-qualifier {
+  color: #ffdd40;
+}
+.cm-operator {
+  color: #47cf73;
+}
+.cm-meta {
+  color: #0ebeff;
+}
+.cm-string {
+  color: #2bc7b9;
+}
+.cm-string-2 {
+  color: #d75093;
+}
+.cm-tag {
+  color: #ffdd40;
+}
+.box-css .cm-tag {
+  color: #ff8d41;
+}
+.cm-tag.cm-bracket {
+  color: #9b9dad;
+}
+.cm-comment {
+  color: #88afbf;
+}
