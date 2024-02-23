@@ -91,3 +91,57 @@ select {
   --resizer-background: var(--editor-top-bar-background);
   --resizer-border: #242424;
 }
+
+body {
+  --c: rgb(0 0 0 / 0.95);
+  --bgb: linear-gradient(var(--c), var(--c));
+  --bg: repeating-conic-gradient(
+    from 7.5deg at center center,
+    hsl(200, 100%, 0%) 0deg 15deg,
+    hsl(200, 100%, 60%) 10deg 30deg
+  );
+
+  background: var(--bgb), var(--bg), black;
+  padding: 1rem;
+}
+
+/*****************************
+           LAYOUT
+ *****************************/
+.wrapper {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  grid-template-rows: 1fr 0fr;
+  align-items: center;
+  justify-content: center;
+
+  height: 100%;
+  transition: all 3s ease-in-out;
+}
+
+.code-container {
+  grid-row: 1/2;
+  grid-column: 1/2;
+}
+
+.preview {
+  grid-row: 1/2;
+  grid-column: 2/3;
+}
+
+@media (max-width: 768px) {
+  .wrapper {
+    grid-template-columns: 1fr 0fr;
+    grid-template-rows: 1fr 1fr;
+  }
+
+  .code-container {
+    grid-row: 1/2;
+    grid-column: 1/2;
+  }
+
+  .preview {
+    grid-row: 2/3;
+    grid-column: 1/2;
+  }
+}

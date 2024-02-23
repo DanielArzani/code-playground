@@ -12,13 +12,9 @@ Rendering code directly into an iframe can pose security risks, especially if th
 
 ## Where I left off
 
-- Fix the css in combined-refactored.css
+- Do final refactor and get the code working
 
-- Add Html, css and js tabs (_perhaps where the top left buttons are_)
-
-- Break up the fancy css into chunks since its too large and takes a while to save
-
-- Remove the background (_behind the editor_) which may have been made with CSS
+  - Don't forget to remove the CDNs
 
 - Add types to code once combined and working
 

@@ -38,6 +38,7 @@
 .tab {
   border: none;
   background-color: transparent;
+  color: white;
   cursor: pointer;
   transition: all 0.3s ease-in-out;
 }

@@ -2,8 +2,13 @@
         PREVIEW IFRAME
  *****************************/
 
+.preview {
+  height: 100%;
+  width: 100%;
+}
+
 .preview--iframe {
-  background-color: white;
-  /* height: 100%;
-      width: 100%; */
+  background-color: rgba(245, 245, 245, 0.566);
+  height: 100%;
+  width: 100%;
 }

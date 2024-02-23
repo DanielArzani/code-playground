@@ -25,91 +25,93 @@
     <link rel="stylesheet" href="/css/preview.css" />
   </head>
   <body>
-    <div class="code-container">
-      <input class="sig" value="Daniel" readonly aria-label="Name" />
-      <div class="glow-container">
-        <div class="augs" data-augmented-ui></div>
+    <div class="wrapper">
+      <div class="code-container">
+        <input class="sig" value="Daniel" readonly aria-label="Name" />
+        <div class="glow-container">
+          <div class="augs" data-augmented-ui></div>
+        </div>
+        <section class="augs bg" data-augmented-ui>
+          <!-- <button
+            class="dots"
+            title="(click to change) Current Mode: HTML"
+          ></button> -->
+          <!-- Tab List -->
+          <div role="tablist" aria-label="Code Editor Tabs" class="tablist">
+            <!-- Tabs -->
+            <button
+              id="html-tab"
+              role="tab"
+              aria-selected="true"
+              aria-controls="html-code"
+              tabindex="0"
+              class="tab tab--html"
+            >
+              HTML
+            </button>
+            <button
+              id="css-tab"
+              role="tab"
+              aria-selected="false"
+              aria-controls="css-code"
+              tabindex="-1"
+              class="tab tab--css"
+            >
+              CSS
+            </button>
+            <button
+              id="js-tab"
+              role="tab"
+              aria-selected="false"
+              aria-controls="js-code"
+              tabindex="-1"
+              class="tab tab--js"
+            >
+              JS
+            </button>
+          </div>
+          <input
+            class="title"
+            value="Code Playground"
+            readonly
+            area-label="Code playground"
+          />
+          <div class="code highcontrast-dark">
+            <!-- <textarea id="html-code"></textarea>
+            <textarea id="css-code"></textarea>
+            <textarea id="js-code"></textarea> -->
+            <!-- Tab Panels -->
+            <textarea
+              id="html-code"
+              role="tabpanel"
+              aria-labelledby="html-tab"
+              class="editor editor--html"
+            ></textarea>
+            <textarea
+              id="css-code"
+              role="tabpanel"
+              aria-labelledby="css-tab"
+              class="editor editor--css"
+              hidden
+            ></textarea>
+            <textarea
+              id="js-code"
+              role="tabpanel"
+              aria-labelledby="js-tab"
+              class="editor editor--js"
+              hidden
+            ></textarea>
+          </div>
+        </section>
       </div>
-      <section class="augs bg" data-augmented-ui>
-        <!-- <button
-          class="dots"
-          title="(click to change) Current Mode: HTML"
-        ></button> -->
-        <!-- Tab List -->
-        <div role="tablist" aria-label="Code Editor Tabs" class="tablist">
-          <!-- Tabs -->
-          <button
-            id="html-tab"
-            role="tab"
-            aria-selected="true"
-            aria-controls="html-code"
-            tabindex="0"
-            class="tab tab--html"
-          >
-            HTML
-          </button>
-          <button
-            id="css-tab"
-            role="tab"
-            aria-selected="false"
-            aria-controls="css-code"
-            tabindex="-1"
-            class="tab tab--css"
-          >
-            CSS
-          </button>
-          <button
-            id="js-tab"
-            role="tab"
-            aria-selected="false"
-            aria-controls="js-code"
-            tabindex="-1"
-            class="tab tab--js"
-          >
-            JS
-          </button>
-        </div>
-        <input
-          class="title"
-          value="Code Playground"
-          readonly
-          area-label="Code playground"
-        />
-        <div class="code highcontrast-dark">
-          <!-- <textarea id="html-code"></textarea>
-          <textarea id="css-code"></textarea>
-          <textarea id="js-code"></textarea> -->
-          <!-- Tab Panels -->
-          <textarea
-            id="html-code"
-            role="tabpanel"
-            aria-labelledby="html-tab"
-            class="editor editor--html"
-          ></textarea>
-          <textarea
-            id="css-code"
-            role="tabpanel"
-            aria-labelledby="css-tab"
-            class="editor editor--css"
-            hidden
-          ></textarea>
-          <textarea
-            id="js-code"
-            role="tabpanel"
-            aria-labelledby="js-tab"
-            class="editor editor--js"
-            hidden
-          ></textarea>
-        </div>
-      </section>
-    </div>
-    <div class="preview">
-      <iframe
-        class="preview--iframe"
-        id="js--preview"
-        title="preview pane"
-        role="contentinfo"
-      ></iframe>
+      <div class="preview">
+        <iframe
+          class="preview--iframe"
+          id="js--preview"
+          title="preview pane"
+          role="contentinfo"
+        ></iframe>
+      </div>
     </div>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.58.1/codemirror.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.58.1/mode/javascript/javascript.js"></script>
