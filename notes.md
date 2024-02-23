@@ -14,20 +14,10 @@ Rendering code directly into an iframe can pose security risks, especially if th
 
 - Do final refactor and get the code working
 
-  - Don't forget to remove the CDNs
-
-  - Don't forget to adds save functionality
-
   - Fix the tabs styles
 
-  - Add a new theme for the text since the old one is gone and delete the un-needed css
+  - Add a new theme for the text since the old one won't work and delete the un-needed css
 
-- Add types to code once combined and working
-
-- Add the convenient plugins
+- Add convenient plugins
 
 - Look up how to use the sandbox attribute on the iframe for security reasons
-
-## To Fix
-
-- Each editor should be using the same number of lines, meaning, deleting one line in HTML should delete it in both css and js
