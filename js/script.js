@@ -34,10 +34,12 @@ import { selectElement } from './helpers.js';
 window.addEventListener('DOMContentLoaded', () => {
   // 1. INSTANTIATE NEW EDITORS FROM CODE MIRROR
 
+  // get containers for editors
   const htmlTextarea = selectElement('#html-code', 'div');
   const cssTextarea = selectElement('#css-code', 'div');
   const jsTextarea = selectElement('#js-code', 'div');
 
+  // some constants
   const highContrastDarkTheme = EditorView.theme(
     {
       '&': {
@@ -74,9 +76,18 @@ window.addEventListener('DOMContentLoaded', () => {
     highContrastDarkTheme,
   ];
 
+  // load from localStorage if applicable
+  const savedHtml =
+    localStorage.getItem('userHtml') || `<!-- HTML content here -->\n`;
+  const savedCss =
+    localStorage.getItem('userCss') || `/* CSS content here */\n`;
+  const savedJs =
+    localStorage.getItem('userJs') || `// JavaScript content here\n`;
+
+  // create new editors
   const htmlEditor = new EditorView({
     state: EditorState.create({
-      doc: '<!-- HTML CONTENT HERE -->',
+      doc: savedHtml,
       extensions: [...commonExtensions, html()],
     }),
     parent: htmlTextarea,
@@ -84,7 +95,7 @@ window.addEventListener('DOMContentLoaded', () => {
 
   const cssEditor = new EditorView({
     state: EditorState.create({
-      doc: 'body { color: red; }',
+      doc: savedCss,
       extensions: [css(), ...commonExtensions],
     }),
     parent: cssTextarea,
@@ -92,7 +103,7 @@ window.addEventListener('DOMContentLoaded', () => {
 
   const jsEditor = new EditorView({
     state: EditorState.create({
-      doc: 'console.log("Hello, world!");',
+      doc: savedJs,
       extensions: [
         javascript(),
         ...commonExtensions,
@@ -127,6 +138,16 @@ window.addEventListener('DOMContentLoaded', () => {
 
     codeContainer.addEventListener('keypress', () => {
       debouncedUpdateIframe();
+    });
+
+    // 4. SAVE THE CODE TO LOCAL STORAGE
+
+    const saveButton = /** @type {HTMLButtonElement} */ (
+      selectElement('.dots', 'button')
+    );
+
+    saveButton.addEventListener('click', () => {
+      saveContentToLocal(htmlEditor, cssEditor, jsEditor);
     });
   } else {
     throw new Error('Iframe doc is undefined');
@@ -188,4 +209,22 @@ function updateIframe(jsEditor, htmlEditor, cssEditor, iframeDoc) {
   </html>
 `);
   iframeDoc.close();
+}
+
+/**
+ * Saves the content of all editors to local storage.
+ * @param {EditorView} htmlEditor - The HTML editor instance.
+ * @param {EditorView} cssEditor - The CSS editor instance.
+ * @param {EditorView} jsEditor - The JavaScript editor instance.
+ */
+function saveContentToLocal(htmlEditor, cssEditor, jsEditor) {
+  const userHtml = htmlEditor.state.doc.toString();
+  const userCss = cssEditor.state.doc.toString();
+  const userJs = jsEditor.state.doc.toString();
+
+  localStorage.setItem('userHtml', userHtml);
+  localStorage.setItem('userCss', userCss);
+  localStorage.setItem('userJs', userJs);
+
+  alert('Content saved locally!');
 }
